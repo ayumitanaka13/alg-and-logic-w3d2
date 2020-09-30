@@ -51,6 +51,10 @@ let testArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 15, 16, 19, 24, 26, 39, 45]
 
 const binarySearch = function(arr, low, high, target) {
 
+    if (low > high) {
+        return 'not found';
+    }
+
     let mid = Math.floor(low + (high - low) / 2);
 
     if (target === arr[mid]) {
@@ -63,6 +67,7 @@ const binarySearch = function(arr, low, high, target) {
 }
 
 console.log(binarySearch(testArray, 0, (testArray.length - 1), 19)); //12
+console.log(binarySearch(testArray, 0, (testArray.length - 1), 18)); //not found
 
 /*
 console.log(binarySearch(testArray, 19)); //12
